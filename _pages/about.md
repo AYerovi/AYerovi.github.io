@@ -13,6 +13,6 @@ Before being in the PhD I completed a Joint Master's Degree in Quantitative Econ
 
 More on my [research](/research/), [teaching](/teaching/) and [CV](/cv/).
 
-## Network formation, live
+## How do academics connect to write papers?
 
 {% include network-demo.html %}
