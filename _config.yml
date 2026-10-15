@@ -28,8 +28,8 @@ author:
   name             : "D. Adrian Yerovi O."
   pronouns         : # example: "she/her"  
   bio              : "PhD Student in Economics"
-  location         : "Germany"
-  employer         : "Technical University of Munich"
+  location         :
+  employer         :
   uri              : # URL
   email            : # add your email address
 
