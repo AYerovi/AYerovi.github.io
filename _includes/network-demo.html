@@ -1,0 +1,57 @@
+{% include base_path %}
+<div id="nf-demo" class="nf-demo">
+  <p class="nf-intro">Players form and cut links in the <em>connections model</em> (Jackson &amp; Wolinsky, 1996). Each player values every other player they can reach, discounted by distance, and pays a cost for each direct link: u<sub>i</sub>(g) = &Sigma;<sub>j&ne;i</sub> &delta;<sup>d(i,j)</sup> &minus; c&middot;d<sub>i</sub>(g). At every step one pair revises its link if it is profitable to do so, until the network is <strong>pairwise stable</strong>. Move the sliders to change the incentives; hover over a player to see their payoff, or drag them around.</p>
+  <div class="nf-controls">
+    <label>Benefit decay &delta; <output id="nf-delta-out"></output>
+      <input id="nf-delta" type="range" min="0.05" max="0.95" step="0.01" value="0.60"></label>
+    <label>Link cost c <output id="nf-cost-out"></output>
+      <input id="nf-cost" type="range" min="0" max="2" step="0.01" value="0.30"></label>
+    <label>Players n <output id="nf-n-out"></output>
+      <input id="nf-n" type="range" min="4" max="16" step="1" value="10"></label>
+  </div>
+  <div class="nf-buttons">
+    <button id="nf-play" type="button">Play</button>
+    <button id="nf-step" type="button">Step</button>
+    <span class="nf-sep">Start from:</span>
+    <button id="nf-empty" type="button">Empty</button>
+    <button id="nf-random" type="button">Random</button>
+    <button id="nf-complete" type="button">Complete</button>
+    <span id="nf-status" class="nf-badge"></span>
+  </div>
+  <svg class="nf-svg" viewBox="0 0 640 400" role="img" aria-label="Animated network of players forming and cutting links"></svg>
+  <p id="nf-last" class="nf-last"></p>
+  <div class="nf-stats">
+    <span>Links: <strong id="nf-links"></strong></span>
+    <span>Total welfare: <strong id="nf-welfare"></strong></span>
+    <span>Efficient welfare: <strong id="nf-efficient"></strong></span>
+  </div>
+  <p id="nf-regime" class="nf-regime"></p>
+</div>
+<style>
+  .nf-demo { --nf-text: var(--global-text-color, #494e52); --nf-border: var(--global-border-color, #bdc1c4); --nf-accent: var(--global-link-color, #52adc8); --nf-bg: var(--global-bg-color, #fff); margin: 1.5em 0; font-size: 0.85em; }
+  .nf-intro { margin-bottom: 0.8em; }
+  .nf-controls { display: flex; flex-wrap: wrap; gap: 0.6em 1.5em; margin-bottom: 0.6em; }
+  .nf-controls label { display: flex; flex-direction: column; min-width: 150px; flex: 1; }
+  .nf-controls output { font-weight: bold; }
+  .nf-controls input[type=range] { width: 100%; accent-color: var(--nf-accent); }
+  .nf-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4em; margin-bottom: 0.5em; }
+  .nf-buttons button { font: inherit; padding: 0.3em 0.8em; border: 1px solid var(--nf-border); border-radius: 4px; background: transparent; color: var(--nf-text); cursor: pointer; }
+  .nf-buttons button:hover { border-color: var(--nf-accent); color: var(--nf-accent); }
+  .nf-buttons #nf-play { background: var(--nf-accent); border-color: var(--nf-accent); color: #fff; min-width: 5em; }
+  .nf-sep { margin-left: 0.6em; opacity: 0.8; }
+  .nf-badge { margin-left: auto; padding: 0.15em 0.6em; border-radius: 999px; font-size: 0.9em; border: 1px solid var(--nf-border); }
+  .nf-stable { border-color: #3a9d5d; color: #3a9d5d; }
+  .nf-moving { opacity: 0.8; }
+  .nf-svg { width: 100%; height: auto; display: block; border: 1px solid var(--nf-border); border-radius: 6px; touch-action: none; user-select: none; }
+  .nf-link { stroke: var(--nf-text); stroke-opacity: 0.45; stroke-width: 1.6; transition: stroke 0.3s, stroke-width 0.3s; }
+  .nf-link.nf-new { stroke: #3a9d5d; stroke-opacity: 1; stroke-width: 3.5; }
+  .nf-node { cursor: grab; }
+  .nf-node circle { fill: var(--nf-accent); stroke: var(--nf-bg); stroke-width: 2; transition: r 0.3s; }
+  .nf-node text { fill: #fff; font-size: 11px; font-weight: bold; pointer-events: none; }
+  .nf-node.nf-active circle { stroke: #3a9d5d; stroke-width: 4; }
+  .nf-node.nf-cut circle { stroke: #d1495b; }
+  .nf-last { min-height: 1.4em; margin: 0.5em 0 0.3em; font-style: italic; }
+  .nf-stats { display: flex; flex-wrap: wrap; gap: 0.3em 1.5em; }
+  .nf-regime { margin-top: 0.5em; opacity: 0.9; }
+</style>
+<script src="{{ base_path }}/assets/js/network-demo.js" defer></script>
