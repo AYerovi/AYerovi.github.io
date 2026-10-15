@@ -1,6 +1,6 @@
 {% include base_path %}
 <div id="nf-demo" class="nf-demo">
-  <p class="nf-intro">Academics meet at conferences. At least theoretically, they play a game: based on a simple cost-benefit decision, they decide whether to write a paper or not with the people they meet. I.e., they form and cut links in the <em>connections model</em> (Jackson &amp; Wolinsky, 1996). Each player values every other player they can reach, discounted by distance, and pays a cost for each direct link:</p>
+  <p class="nf-intro">Academics meet at conferences. At least theoretically, they play a game: based on a simple cost-benefit decision, they decide whether to write a paper or not with the people they meet. I.e., they form and cut links to form a network. Each academic values every other academic they can reach, discounted by the correlation between their interests and paying a cost for exerting effort in the paper they write (illustrated by the link):</p>
   <div class="nf-formula">\[ u_i(g) \;=\; \sum_{j \neq i} \delta^{d(i,j)} \;-\; c \, d_i(g), \]</div>
   <p class="nf-intro">where \(d(i,j)\) is the length of the shortest path between \(i\) and \(j\) and \(d_i(g)\) is the number of links of \(i\). At every step one pair revises its link if it is profitable to do so, until the network is <strong>pairwise stable</strong>. Move the sliders to change the incentives; hover over a player to see their payoff, or drag them around.</p>
   <div class="nf-controls">
