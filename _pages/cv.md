@@ -27,7 +27,7 @@ Awards and Grants
 * Erasmus+ Travel Grant, Erasmus Mundus Joint Degree in Quantitative Economic Methods, 2024.
 * Medal of Merit, Escuela Politécnica Nacional, 2024.
 * Erasmus Mundus Consortium Scholarship, Erasmus Mundus Joint Degree in Quantitative Economic Methods, 2023.
-* Elinor Ostrom Prize for best theses in Economics, Departamento de Economía Cuantitativa, Escuela Politécnica Nacional, 2022.
+* Elinor Ostrom Prize for best thesis, Departamento de Economía Cuantitativa, Escuela Politécnica Nacional, 2022.
 * 1st place, IV Concurso de Investigación Económica, DNI and Superintendencia de Compañías del Ecuador, 2022.
 * Finalist, LAC Concurso de Ensayos "Ideas para el Futuro", CAF - Latin American Development Bank, 2021.
 * Salutatorian (Abanderado), Colegio T. W. Anderson, 2016.
