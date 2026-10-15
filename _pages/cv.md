@@ -23,11 +23,11 @@ Research interests
 
 Awards and Grants
 ======
-* Best Master Thesis, Erasmus Mundus Joint Degree in Quantitative Economics Methods, 2025.
-* Erasmus+ Travel Grant, Erasmus Mundus Joint Degree in Quantitative Economics Methods, 2024.
+* Best Master Thesis, Erasmus Mundus Joint Degree in Quantitative Economic Methods, 2025.
+* Erasmus+ Travel Grant, Erasmus Mundus Joint Degree in Quantitative Economic Methods, 2024.
 * Medal of Merit, Escuela Politécnica Nacional, 2024.
-* Erasmus Mundus Consortium Scholarship, Erasmus Mundus Joint Degree in Quantitative Economics Methods, 2023.
-* Ellinor Orstrom Prize for best theses in Economics, Departamento de Economía Cuantitativa, Escuela Politécnica Nacional, 2022.
+* Erasmus Mundus Consortium Scholarship, Erasmus Mundus Joint Degree in Quantitative Economic Methods, 2023.
+* Elinor Ostrom Prize for best theses in Economics, Departamento de Economía Cuantitativa, Escuela Politécnica Nacional, 2022.
 * 1st place, IV Concurso de Investigación Económica, DNI and Superintendencia de Compañías del Ecuador, 2022.
 * Finalist, LAC Concurso de Ensayos "Ideas para el Futuro", CAF - Latin American Development Bank, 2021.
 * Salutatorian (Abanderado), Colegio T. W. Anderson, 2016.
@@ -36,7 +36,7 @@ Experience
 ======
 * Nov 2025 - Present, Teaching and Research Associate, Technical University of Munich.
 * Jan 2022 - Aug 2023, Analyst, Dirección Nacional de Riesgos y Estudios, Superintendencia de Bancos del Ecuador.
-* Jan 2021 - Dec 2021, Research Assistant, Departamento de Economía Cuantitative, Escuela Politécnica Nacional.
+* Jan 2021 - Dec 2021, Research Assistant, Departamento de Economía Cuantitativa, Escuela Politécnica Nacional.
 * Jan 2020 - Jul 2020, Data Analysis Intern, Empresa Pública de la Escuela Politécnica Nacional del Ecuador.
 
 Teaching
