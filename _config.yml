@@ -31,7 +31,7 @@ author:
   location         : "Germany"
   employer         : "Technical University of Munich"
   uri              : # URL
-  email            : "your.email@tum.de"
+  email            : # add your email address
 
   # Academic websites
   academia         : # URL
