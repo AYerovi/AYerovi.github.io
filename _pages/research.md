@@ -6,4 +6,4 @@ author_profile: true
 ---
 
 ## Work in progress
-A few projects in the works. To be updated soon.
+I am currently working on a few experimental projects about education, labor, and preferences. This page will be updated soon.
