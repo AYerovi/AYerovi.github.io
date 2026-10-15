@@ -273,7 +273,7 @@
     var w = welfare(adj), eff = efficientInfo();
     ui.welfare.textContent = w.toFixed(2);
     ui.efficient.textContent = eff.best.w.toFixed(2) + " (" + eff.best.name + ")";
-    ui.regime.innerHTML = regimeText(eff);
+    setRegime(eff);
     var suffix = "";
     if (stable) {
       suffix = Math.abs(w - eff.best.w) < 1e-6
@@ -283,18 +283,18 @@
     ui.last.textContent = lastText + suffix;
   }
 
-  function regimeText(eff) {
-    var a = eff.starThreshold.toFixed(2), b = eff.emptyThreshold.toFixed(2);
-    if (cost < eff.starThreshold)
-      return "Links are cheap (c &lt; δ − δ² = " + a +
-        "): the complete network is efficient and the unique pairwise stable network.";
-    if (cost < delta)
-      return "Intermediate cost (" + a + " &lt; c &lt; δ): a star is efficient. " +
-        "A star is pairwise stable, but other stable networks can arise too.";
-    if (cost < eff.emptyThreshold)
-      return "c &gt; δ: nobody wants to start a link from scratch, so the empty network is stable, " +
-        "yet a star would be efficient (c &lt; " + b + "). Stability and efficiency diverge.";
-    return "Links are expensive (c &gt; " + b + "): the empty network is efficient.";
+  // Show the explanation for the current cost regime. The four texts are written
+  // in the page (so MathJax typesets them once); here we only pick one and fill
+  // in the numbers.
+  function setRegime(eff) {
+    var key = cost < eff.starThreshold ? "cheap"
+      : cost < delta ? "star"
+      : cost < eff.emptyThreshold ? "diverge" : "empty";
+    var ps = ui.regime.querySelectorAll("[data-regime]");
+    for (var k = 0; k < ps.length; k++) ps[k].hidden = ps[k].getAttribute("data-regime") !== key;
+    var as = ui.regime.querySelectorAll(".nf-a"), bs = ui.regime.querySelectorAll(".nf-b");
+    for (k = 0; k < as.length; k++) as[k].textContent = eff.starThreshold.toFixed(2);
+    for (k = 0; k < bs.length; k++) bs[k].textContent = eff.emptyThreshold.toFixed(2);
   }
 
   // ---------- Force layout ----------
@@ -394,4 +394,5 @@
   placeNodes(n);
   resetWith("random");
   requestAnimationFrame(tick);
+
 })();

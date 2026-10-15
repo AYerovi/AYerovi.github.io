@@ -36,3 +36,35 @@
     "layout/archive",
     "layout/sidebar"
 ;
+
+
+/* ==========================================================================
+   Custom overrides
+   ========================================================================== */
+
+/* Slim footer that sits at the end of the page instead of being pinned */
+body { padding-bottom: 0; }
+.page__footer {
+  position: relative;
+  bottom: auto;
+  margin-top: 2em;
+  -webkit-animation: none;
+          animation: none;
+}
+.page__footer footer {
+  margin-top: 0.4em;
+  padding-bottom: 0.4em;
+}
+
+/* Higher-contrast links */
+:root {
+  --global-link-color         : #1a5490;
+  --global-link-color-hover   : #0e3a69;
+  --global-link-color-visited : #1a5490;
+}
+html[data-theme="dark"] {
+  --global-link-color         : #8cc8ff;
+  --global-link-color-hover   : #b8ddff;
+  --global-link-color-visited : #8cc8ff;
+}
+

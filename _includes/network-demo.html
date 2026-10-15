@@ -1,12 +1,14 @@
 {% include base_path %}
 <div id="nf-demo" class="nf-demo">
-  <p class="nf-intro">Players form and cut links in the <em>connections model</em> (Jackson &amp; Wolinsky, 1996). Each player values every other player they can reach, discounted by distance, and pays a cost for each direct link: u<sub>i</sub>(g) = &Sigma;<sub>j&ne;i</sub> &delta;<sup>d(i,j)</sup> &minus; c&middot;d<sub>i</sub>(g). At every step one pair revises its link if it is profitable to do so, until the network is <strong>pairwise stable</strong>. Move the sliders to change the incentives; hover over a player to see their payoff, or drag them around.</p>
+  <p class="nf-intro">Players form and cut links in the <em>connections model</em> (Jackson &amp; Wolinsky, 1996). Each player values every other player they can reach, discounted by distance, and pays a cost for each direct link:</p>
+  <div class="nf-formula">\[ u_i(g) \;=\; \sum_{j \neq i} \delta^{d(i,j)} \;-\; c \, d_i(g), \]</div>
+  <p class="nf-intro">where \(d(i,j)\) is the length of the shortest path between \(i\) and \(j\) and \(d_i(g)\) is the number of links of \(i\). At every step one pair revises its link if it is profitable to do so, until the network is <strong>pairwise stable</strong>. Move the sliders to change the incentives; hover over a player to see their payoff, or drag them around.</p>
   <div class="nf-controls">
-    <label>Benefit decay &delta; <output id="nf-delta-out"></output>
+    <label><span>Benefit decay \(\delta\) <output id="nf-delta-out"></output></span>
       <input id="nf-delta" type="range" min="0.05" max="0.95" step="0.01" value="0.60"></label>
-    <label>Link cost c <output id="nf-cost-out"></output>
+    <label><span>Link cost \(c\) <output id="nf-cost-out"></output></span>
       <input id="nf-cost" type="range" min="0" max="2" step="0.01" value="0.30"></label>
-    <label>Players n <output id="nf-n-out"></output>
+    <label><span>Players \(n\) <output id="nf-n-out"></output></span>
       <input id="nf-n" type="range" min="4" max="16" step="1" value="10"></label>
   </div>
   <div class="nf-buttons">
@@ -25,14 +27,20 @@
     <span>Total welfare: <strong id="nf-welfare"></strong></span>
     <span>Efficient welfare: <strong id="nf-efficient"></strong></span>
   </div>
-  <p id="nf-regime" class="nf-regime"></p>
+  <div id="nf-regime" class="nf-regime">
+    <p data-regime="cheap" hidden><strong>Cheap links:</strong> \(c < \delta - \delta^2\) (here \(\delta - \delta^2 =\) <span class="nf-a"></span>). The complete network is efficient and is the unique pairwise stable network.</p>
+    <p data-regime="star" hidden><strong>Intermediate cost:</strong> \(\delta - \delta^2 < c < \delta\) (here \(\delta - \delta^2 =\) <span class="nf-a"></span>). A star is efficient; a star is pairwise stable, but other stable networks can arise too.</p>
+    <p data-regime="diverge" hidden><strong>Stability and efficiency diverge:</strong> \(\delta < c < \delta + \tfrac{(n-2)\,\delta^2}{2}\) (here the upper bound is <span class="nf-b"></span>). Nobody wants to start a link from scratch, so the empty network is stable, yet a star would be efficient.</p>
+    <p data-regime="empty" hidden><strong>Expensive links:</strong> \(c > \delta + \tfrac{(n-2)\,\delta^2}{2}\) (here <span class="nf-b"></span>). The empty network is efficient.</p>
+  </div>
 </div>
 <style>
   .nf-demo { --nf-text: var(--global-text-color, #494e52); --nf-border: var(--global-border-color, #bdc1c4); --nf-accent: var(--global-link-color, #52adc8); --nf-bg: var(--global-bg-color, #fff); margin: 1.5em 0; font-size: 0.85em; }
-  .nf-intro { margin-bottom: 0.8em; }
+  .nf-intro { margin-bottom: 0.6em; }
+  .nf-formula { margin: 0.2em 0 0.8em; overflow-x: auto; }
   .nf-controls { display: flex; flex-wrap: wrap; gap: 0.6em 1.5em; margin-bottom: 0.6em; }
   .nf-controls label { display: flex; flex-direction: column; min-width: 150px; flex: 1; }
-  .nf-controls output { font-weight: bold; }
+  .nf-controls output { font-weight: bold; margin-left: 0.3em; }
   .nf-controls input[type=range] { width: 100%; accent-color: var(--nf-accent); }
   .nf-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4em; margin-bottom: 0.5em; }
   .nf-buttons button { font: inherit; padding: 0.3em 0.8em; border: 1px solid var(--nf-border); border-radius: 4px; background: transparent; color: var(--nf-text); cursor: pointer; }
@@ -53,5 +61,6 @@
   .nf-last { min-height: 1.4em; margin: 0.5em 0 0.3em; font-style: italic; }
   .nf-stats { display: flex; flex-wrap: wrap; gap: 0.3em 1.5em; }
   .nf-regime { margin-top: 0.5em; opacity: 0.9; }
+  .nf-regime p { margin: 0; }
 </style>
 <script src="{{ base_path }}/assets/js/network-demo.js" defer></script>
