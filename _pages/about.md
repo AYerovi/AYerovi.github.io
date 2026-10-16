@@ -15,4 +15,7 @@ Before being in the PhD I completed a Joint Master's Degree in Quantitative Econ
 [//]: # (How do academics connect to write papers?)
 
 
-[//]: # ({% include network-demo.html %})
+{% comment %}
+Network-formation demo, hidden for now. Delete this comment block to show it again.
+{% include network-demo.html %}
+{% endcomment %}
