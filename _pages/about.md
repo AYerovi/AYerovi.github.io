@@ -13,6 +13,7 @@ Before being in the PhD I completed a Joint Master's Degree in Quantitative Econ
 
 More on my [research](/research/), [teaching](/teaching/) and [CV](/cv/).
 
-## How do academics connect to write papers?
+[//]: # (How do academics connect to write papers?)
 
-{% include network-demo.html %}
+
+[//]: # ({% include network-demo.html %})
